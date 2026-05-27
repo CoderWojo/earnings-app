@@ -1,8 +1,12 @@
 package org.wojo;
 
-import java.sql.ResultSet;
+import org.wojo.entity.Earning;
+
+import java.util.List;
 
 public interface CRUDOperations {
 
-    ResultSet getAll();
+    List<Earning> findAll();
+
+    int addEarning(Earning earning);
 }

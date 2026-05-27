@@ -19,7 +19,7 @@ public class DatabaseInitializer {
     """;
 
         try(Statement statement = connection.createStatement()) {
-            boolean result = statement.execute(query);
+            statement.execute(query);
 
             System.out.println("Table is created successfully.");
         } catch(SQLException e) {
