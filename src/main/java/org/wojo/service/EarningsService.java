@@ -23,4 +23,15 @@ public class EarningsService {
         return repository.addEarning(earning);
     }
 
+    public int updateEarning(Earning earning) {
+        return repository.updateEarning(earning);
+    }
+
+    public int deleteById(int id) {
+        return repository.deleteById(id);
+    }
+
+    public boolean exists(int id) {
+        return repository.existsById(id);
+    }
 }
