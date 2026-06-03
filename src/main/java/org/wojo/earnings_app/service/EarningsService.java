@@ -2,7 +2,7 @@ package org.wojo.earnings_app.service;
 
 import org.springframework.stereotype.Service;
 import org.wojo.earnings_app.entity.Earning;
-import org.wojo.earnings_app.exception.NotFoundException;
+import org.wojo.earnings_app.exception.EarningNotFoundException;
 import org.wojo.earnings_app.repository.EarningsRepository;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class EarningsService {
 
     public Earning updateEarning(Earning earning) {
         if(!repository.existsById(earning.getId())){
-            throw new NotFoundException("You provided incorrect id.");
+            throw new EarningNotFoundException("You provided incorrect id.");
         }
 
         return repository.save(earning);
@@ -31,7 +31,7 @@ public class EarningsService {
 
     public void deleteById(int id) {
         if(!repository.existsById(id)) {
-            throw new NotFoundException("You provided incorrect id.");
+            throw new EarningNotFoundException("You provided incorrect id.");
         }
 
         repository.deleteById(id);

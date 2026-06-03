@@ -35,8 +35,6 @@ public class EarningController {
     @PutMapping("/update")
     public ResponseEntity<Earning> update(@RequestBody Earning earning) {
 
-        // TODO: napisz ExceptionHandler niech wyłapie wyjątek NotFoundException
-        //  i wtedy zwróci ResponseEntity z odpowiednimi właściwościami
         Earning updated = service.updateEarning(earning);
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -47,7 +45,6 @@ public class EarningController {
     public ResponseEntity<Void> delete(@PathVariable int id) {
         // The 204 (No Content) status code indicates that the server has successfully fulfilled the request
         // and that there is no additional content to send in the response content.
-        //  TODO: wyłap wyjątek
         service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
