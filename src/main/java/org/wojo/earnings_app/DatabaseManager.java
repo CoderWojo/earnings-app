@@ -1,4 +1,4 @@
-package org.wojo;
+package org.wojo.earnings_app;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
